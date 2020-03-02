@@ -60,6 +60,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         user_mobile = header!!.findViewById<TextView>(R.id.user_mobile)
         profile_view = header!!.findViewById<LinearLayout>(R.id.profile_view)
 
+
         toolbar!!.setTitle(R.string.app_name)
         user_name!!.text = "Name : "+sharedpreferences?.getString(utills.F_Name, "")+" "+sharedpreferences?.getString(utills.L_Name, "")
         this.user_email!!.text = "Email : "+sharedpreferences!!.getString(utills.Email, "")
