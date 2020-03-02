@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="50dp" android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/back_arrow"
+        android:tint="@color/white"
+        android:visibility="invisible"
+        android:layout_weight="2"
+        android:padding="@dimen/text_labelmin"/>
+
+    <TextView
+        android:id="@+id/header_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/text_labelmed"
+        android:textColor="@color/white"
+        android:layout_weight="1"
+        android:text="Header" />
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/more"
+        android:visibility="invisible"
+        android:tint="@color/white"
+        android:layout_weight="2"
+        android:padding="@dimen/text_labelmin"/>
+
+</LinearLayout>
