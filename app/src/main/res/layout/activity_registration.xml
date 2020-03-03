@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     android:scrollbars="none">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -228,4 +233,6 @@
 
     </RelativeLayout>
 
-</ScrollView>
+    </ScrollView>
+
+</RelativeLayout>
