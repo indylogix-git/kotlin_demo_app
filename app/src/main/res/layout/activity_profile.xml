@@ -124,6 +124,47 @@
                 android:layout_marginBottom="@dimen/text_labelmin"
                 android:background="@color/black" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User DOB: "
+                android:textColor="@color/textcolor" />
+
+            <TextView
+                android:id="@+id/edtUserdob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:maxLength="10"
+                android:textColor="@color/textcolor" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="@dimen/text_labelmin"
+                android:background="@color/black" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Time: "
+                android:textColor="@color/textcolor" />
+
+            <TextView
+                android:id="@+id/edtUsertime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:maxLength="10"
+                android:textColor="@color/textcolor" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="@dimen/text_labelmin"
+                android:background="@color/black" />
+
             <Button
                 android:id="@+id/btnUpdate"
                 android:layout_width="150dp"

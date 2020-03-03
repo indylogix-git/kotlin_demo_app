@@ -28,6 +28,7 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
+import com.kotlinapp.Login.LoginActivity
 import com.kotlinapp.R
 import com.kotlinapp.Utills.utills
 import com.kotlinapp.Utills.utills.isConnected
@@ -75,13 +76,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         pager = findViewById(R.id.pager)
 
         /* Display First Fragment initially */
-        val bundle = Bundle()
+        loadFragment(FirstFragment())
+        /*val bundle = Bundle()
         bundle.putString("TITLE", value)
         val fragmentManager = supportFragmentManager
         firstFragment.arguments = bundle
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.nav_host_fragment, firstFragment)
-        fragmentTransaction.commit()
+        fragmentTransaction.commit()*/
 
         tabLayout!!.addTab(tabLayout!!.newTab().setText("First"))
         tabLayout!!.addTab(tabLayout!!.newTab().setText("Second"))
@@ -104,13 +106,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 value = tab.position.toString()
 
                 if (tab.position == 0) {
-                    val bundle = Bundle()
-                    bundle.putString("TITLE", value)
-                    val fragmentManager = supportFragmentManager
-                    firstFragment.arguments = bundle
-                    val fragmentTransaction = fragmentManager.beginTransaction()
-                    fragmentTransaction.replace(R.id.nav_host_fragment, firstFragment)
-                    fragmentTransaction.commit()
+                    loadFragment(FirstFragment())
                     title = "First"
                 } else if (tab.position == 1) {
                     val bundle = Bundle()
@@ -294,18 +290,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_home -> {
-                //                                loadFragment(new ChooseWorkFragment());
-                val bundle = Bundle()
-                bundle.putString("fragment", "Gallery")
-                val fragment: Fragment = GalleryFragment()
-                val fragmentManager =
-                    supportFragmentManager
-                fragment.arguments = bundle
-                val fragmentTransaction =
-                    fragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.id.nav_host_fragment, fragment)
-                fragmentTransaction.addToBackStack(null)
-                fragmentTransaction.commit()
+                loadFragment(FirstFragment())
                 title = "Home"
             }
             R.id.nav_gallery -> {
@@ -324,7 +309,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_slideshow -> {
                 val bundle = Bundle()
-                bundle.putString("fragment", "Gallery")
+                bundle.putString("fragment", "Slideshow")
                 val fragment: Fragment = GalleryFragment()
                 val fragmentManager =
                     supportFragmentManager
@@ -336,9 +321,36 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 fragmentTransaction.commit()
                 title = "Slideshow"
             }
+            R.id.nav_logout -> {
+                val editor = sharedpreferences!!.edit()
+                editor.putString(utills.ID, "")
+                editor.putString(utills.Name, "")
+                editor.putString(utills.Phone, "")
+                editor.putString(utills.Email, "")
+                editor.putString(utills.F_Name, "")
+                editor.putString(utills.L_Name, "")
+                editor.putString(utills.DOB, "")
+                editor.putString(utills.Time, "")
+                editor.commit()
+                val logout = Intent(this@MainActivity, LoginActivity::class.java)
+                startActivity(logout)
+                finishAffinity()
+            }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun loadFragment(fragment: Fragment) { // load fragment
+        val bundle = Bundle()
+        bundle.putString("TITLE", value)
+        val fragmentManager = supportFragmentManager
+        firstFragment.arguments = bundle
+        val transaction =
+            supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 }

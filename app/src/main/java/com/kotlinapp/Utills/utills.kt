@@ -15,6 +15,8 @@ object utills {
     const val Name = "nameKey"
     const val Phone = "phoneKey"
     const val Email = "emailKey"
+    const val DOB = "dobKey"
+    const val Time = "timeKey"
     var EMAIL_ADDRESS_PATTERN = Pattern.compile(
         "[a-zA-Z0-9+._%-+]{1,256}" +
                 "@" +
