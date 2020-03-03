@@ -61,6 +61,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val secondFragment = SecondFragment()
     private val thirdFragment = ThirdFragment()
     private val fourthFragment = FourthFragment()
+    private val fifthFragment = FifthFragment()
+    private val sixthFragment = SixthFragment()
+    private val sevenFragment = SevenFragment()
+    private val eightFragment = EightFragment()
 
     @SuppressLint("WrongConstant", "ResourceAsColor")
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -91,6 +95,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         tabLayout!!.addTab(tabLayout!!.newTab().setText("Second"))
         tabLayout!!.addTab(tabLayout!!.newTab().setText("Third"))
         tabLayout!!.addTab(tabLayout!!.newTab().setText("Fourth"))
+        tabLayout!!.addTab(tabLayout!!.newTab().setText("Fifth"))
+        tabLayout!!.addTab(tabLayout!!.newTab().setText("Sixth"))
+        tabLayout!!.addTab(tabLayout!!.newTab().setText("Seventh"))
+        tabLayout!!.addTab(tabLayout!!.newTab().setText("Eight"))
 
         val adapter = TabPagerAdapter(
             supportFragmentManager,
@@ -137,6 +145,42 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     fragmentTransaction.replace(R.id.nav_host_fragment, fourthFragment)
                     fragmentTransaction.commit()
                     title = "Fourth"
+                } else if (tab.position == 4) {
+                    val bundle = Bundle()
+                    bundle.putString("TITLE", value)
+                    val fragmentManager = supportFragmentManager
+                    fifthFragment.arguments = bundle
+                    val fragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.nav_host_fragment, fifthFragment)
+                    fragmentTransaction.commit()
+                    title = "Fifth"
+                } else if (tab.position == 5) {
+                    val bundle = Bundle()
+                    bundle.putString("TITLE", value)
+                    val fragmentManager = supportFragmentManager
+                    sixthFragment.arguments = bundle
+                    val fragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.nav_host_fragment, sixthFragment)
+                    fragmentTransaction.commit()
+                    title = "Sixth"
+                } else if (tab.position == 6) {
+                    val bundle = Bundle()
+                    bundle.putString("TITLE", value)
+                    val fragmentManager = supportFragmentManager
+                    sevenFragment.arguments = bundle
+                    val fragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.nav_host_fragment, sevenFragment)
+                    fragmentTransaction.commit()
+                    title = "Seven"
+                } else if (tab.position == 7) {
+                    val bundle = Bundle()
+                    bundle.putString("TITLE", value)
+                    val fragmentManager = supportFragmentManager
+                    eightFragment.arguments = bundle
+                    val fragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.nav_host_fragment, eightFragment)
+                    fragmentTransaction.commit()
+                    title = "Eight"
                 }
 
 //              loadFragment(new ChooseWorkFragment());
