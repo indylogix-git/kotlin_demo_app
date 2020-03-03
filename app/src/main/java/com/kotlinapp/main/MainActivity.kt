@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         sharedpreferences =
             getSharedPreferences(utills.MyPREFERENCES, Context.MODE_PRIVATE)
 
-        navigationView = findViewById(R.id.nav_view) as NavigationView
+        navigationView = findViewById<NavigationView>(R.id.nav_view)
         header = navigationView!!.getHeaderView(0)
 
         tabLayout = findViewById(R.id.tabLayout)
@@ -85,13 +85,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         /* Display First Fragment initially */
         loadFragment(FirstFragment())
-        /*val bundle = Bundle()
-        bundle.putString("TITLE", value)
-        val fragmentManager = supportFragmentManager
-        firstFragment.arguments = bundle
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.nav_host_fragment, firstFragment)
-        fragmentTransaction.commit()*/
 
         for(i in lable.indices){
             tabLayout!!.addTab(tabLayout!!.newTab().setText(lable[i]))
@@ -114,70 +107,70 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 if (tab.position == 0) {
                     loadFragment(FirstFragment())
-                    title = "First"
+                    title = lable[tab.position]
                 } else if (tab.position == 1) {
                     val bundle = Bundle()
-                    bundle.putString("TITLE", value)
+                    bundle.putString("TITLE", lable[tab.position])
                     val fragmentManager = supportFragmentManager
                     secondFragment.arguments = bundle
                     val fragmentTransaction = fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, secondFragment)
                     fragmentTransaction.commit()
-                    title = "Second"
+                    title = lable[tab.position]
                 } else if (tab.position == 2) {
                     val bundle = Bundle()
-                    bundle.putString("TITLE", value)
+                    bundle.putString("TITLE", lable[tab.position])
                     val fragmentManager = supportFragmentManager
                     thirdFragment.arguments = bundle
                     val fragmentTransaction = fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, thirdFragment)
                     fragmentTransaction.commit()
-                    title = "Third"
+                    title = lable[tab.position]
                 } else if (tab.position == 3) {
                     val bundle = Bundle()
-                    bundle.putString("TITLE", value)
+                    bundle.putString("TITLE", lable[tab.position])
                     val fragmentManager = supportFragmentManager
                     fourthFragment.arguments = bundle
                     val fragmentTransaction = fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, fourthFragment)
                     fragmentTransaction.commit()
-                    title = "Fourth"
+                    title = lable[tab.position]
                 } else if (tab.position == 4) {
                     val bundle = Bundle()
-                    bundle.putString("TITLE", value)
+                    bundle.putString("TITLE", lable[tab.position])
                     val fragmentManager = supportFragmentManager
                     fifthFragment.arguments = bundle
                     val fragmentTransaction = fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, fifthFragment)
                     fragmentTransaction.commit()
-                    title = "Fifth"
+                    title = lable[tab.position]
                 } else if (tab.position == 5) {
                     val bundle = Bundle()
-                    bundle.putString("TITLE", value)
+                    bundle.putString("TITLE", lable[tab.position])
                     val fragmentManager = supportFragmentManager
                     sixthFragment.arguments = bundle
                     val fragmentTransaction = fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, sixthFragment)
                     fragmentTransaction.commit()
-                    title = "Sixth"
+                    title = lable[tab.position]
                 } else if (tab.position == 6) {
                     val bundle = Bundle()
-                    bundle.putString("TITLE", value)
+                    bundle.putString("TITLE", lable[tab.position])
                     val fragmentManager = supportFragmentManager
                     sevenFragment.arguments = bundle
                     val fragmentTransaction = fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, sevenFragment)
                     fragmentTransaction.commit()
-                    title = "Seven"
+                    title = lable[tab.position]
                 } else if (tab.position == 7) {
                     val bundle = Bundle()
-                    bundle.putString("TITLE", value)
+                    bundle.putString("TITLE", lable[tab.position])
                     val fragmentManager = supportFragmentManager
                     eightFragment.arguments = bundle
                     val fragmentTransaction = fragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.nav_host_fragment, eightFragment)
                     fragmentTransaction.commit()
-                    title = "Eight"
+                    title = lable[tab.position]
                 }
 
 //              loadFragment(new ChooseWorkFragment());
