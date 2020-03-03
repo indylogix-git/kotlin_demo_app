@@ -11,11 +11,14 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
+import com.kotlinapp.Animation.MyBounceInterpolator
 import com.kotlinapp.Login.LoginActivity
 import com.kotlinapp.main.MainActivity
 import com.kotlinapp.R
@@ -26,10 +29,24 @@ class SplashActivity : Activity() {
 
     var handler: Handler? = null
     private val view: View? = null
+    private var logo_img: ImageView? = null
     var sharedpreferences: SharedPreferences? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+        logo_img = findViewById(R.id.logo_img)
+
+        val myAnim =
+            AnimationUtils.loadAnimation(this, R.anim.bounce_animation)
+
+        // Use bounce interpolator with amplitude 0.2 and frequency 20
+        // Use bounce interpolator with amplitude 0.2 and frequency 20
+        val interpolator = MyBounceInterpolator(0.2, 50.0)
+        myAnim.interpolator = interpolator
+
+        logo_img!!.startAnimation(myAnim)
 
         sharedpreferences =
             getSharedPreferences(utills.MyPREFERENCES, Context.MODE_PRIVATE)

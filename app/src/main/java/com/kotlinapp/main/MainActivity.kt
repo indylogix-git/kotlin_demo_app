@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -28,6 +29,7 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
+import com.kotlinapp.Animation.MyBounceInterpolator
 import com.kotlinapp.Login.LoginActivity
 import com.kotlinapp.R
 import com.kotlinapp.Utills.utills
@@ -166,7 +168,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         this.user_email!!.text = "Email : " + sharedpreferences!!.getString(utills.Email, "")
         this.user_mobile!!.text = "Mobile : " + sharedpreferences!!.getString(utills.Phone, "")
 
-        fab!!.setBackgroundColor(R.color.colorPrimary)
+        val myAnim =
+            AnimationUtils.loadAnimation(this, R.anim.bounce_animation)
+
+        // Use bounce interpolator with amplitude 0.2 and frequency 20
+        // Use bounce interpolator with amplitude 0.2 and frequency 20
+        val interpolator = MyBounceInterpolator(0.2, 20.0)
+        myAnim.interpolator = interpolator
+
+        fab!!.startAnimation(myAnim)
+
         fab!!.setOnClickListener {
             checkPermission()
         }
