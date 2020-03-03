@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.core.view.isVisible
 import com.kotlinapp.Login.LoginActivity
 import com.kotlinapp.otp.OtpActivity
 import com.kotlinapp.R
@@ -60,6 +61,7 @@ class RegistrationActivity : Activity() {
         login_txt = findViewById(R.id.login_txt)
         edtUserdate = findViewById(R.id.edtUserdate)
         edtUsertime = findViewById(R.id.edtUsertime)
+
         btnRegistration =
             findViewById<View>(R.id.btnRegistration) as Button
         userService = ApiUtils.userService
