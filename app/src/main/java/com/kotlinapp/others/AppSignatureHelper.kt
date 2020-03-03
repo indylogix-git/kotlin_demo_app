@@ -1,4 +1,4 @@
-package com.kotlinapp
+package com.kotlinapp.others
 
 import android.annotation.SuppressLint
 import android.content.Context  
@@ -34,17 +34,22 @@ class AppSignatureHelper(context: Context) : ContextWrapper(context) {
                 val signatures = packageManager.getPackageInfo(packageName,  
                         PackageManager.GET_SIGNATURES).signatures  
                 signatures  
-                        .mapNotNull { hash(packageName, it.toCharsString()) }  
+                        .mapNotNull {
+                            hash(
+                                packageName,
+                                it.toCharsString()
+                            )
+                        }
                         .mapTo(appCodes) { String.format("%s", it) }  
             } catch (e: PackageManager.NameNotFoundException) {  
-                Log.v(TAG, "Unable to find package to obtain hash.", e)  
+                Log.v(TAG, "Unable to find package to obtain hash.", e)
             }  
   
             return appCodes  
         }  
   
     companion object {  
-        val TAG = AppSignatureHelper::class.java.simpleName!!  
+        val TAG = AppSignatureHelper::class.java.simpleName!!
         private val HASH_TYPE = "SHA-256"  
         private val NUM_HASHED_BYTES = 9  
         private val NUM_BASE64_CHAR = 11  
@@ -53,20 +58,24 @@ class AppSignatureHelper(context: Context) : ContextWrapper(context) {
         private fun hash(packageName: String, signature: String): String? {  
             val appInfo = packageName + " " + signature  
             try {  
-                val messageDigest = MessageDigest.getInstance(HASH_TYPE)  
+                val messageDigest = MessageDigest.getInstance(HASH_TYPE)
                 messageDigest.update(appInfo.toByteArray(StandardCharsets.UTF_8))  
                 var hashSignature = messageDigest.digest()  
   
                 // truncated into NUM_HASHED_BYTES  
-                hashSignature = Arrays.copyOfRange(hashSignature, 0, NUM_HASHED_BYTES)  
+                hashSignature = Arrays.copyOfRange(hashSignature, 0,
+                    NUM_HASHED_BYTES
+                )
                 // encode into Base64  
                 var base64Hash = Base64.encodeToString(hashSignature, Base64.NO_PADDING or Base64.NO_WRAP)  
-                base64Hash = base64Hash.substring(0, NUM_BASE64_CHAR)  
+                base64Hash = base64Hash.substring(0,
+                    NUM_BASE64_CHAR
+                )
   
-                Log.v(TAG + "sms_sample_test", String.format("pkg: %s -- hash: %s", packageName, base64Hash))  
+                Log.v(TAG + "sms_sample_test", String.format("pkg: %s -- hash: %s", packageName, base64Hash))
                 return base64Hash  
             } catch (e: NoSuchAlgorithmException) {  
-                Log.v(TAG + "sms_sample_test", "hash:NoSuchAlgorithm", e)  
+                Log.v(TAG + "sms_sample_test", "hash:NoSuchAlgorithm", e)
             }  
   
             return null  

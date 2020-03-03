@@ -1,4 +1,4 @@
-package com.kotlinapp
+package com.kotlinapp.otp
 
 import android.content.Intent
 import android.content.IntentFilter
@@ -9,9 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.gms.auth.api.phone.SmsRetriever
 import com.kotlinapp.Login.LoginActivity
+import com.kotlinapp.others.MySMSBroadcastReceiver
+import com.kotlinapp.R
+import com.kotlinapp.main.MainActivity
 
 
-class OtpActivity : AppCompatActivity(), MySMSBroadcastReceiver.OTPReceiveListener {
+class OtpActivity : AppCompatActivity(),
+    MySMSBroadcastReceiver.OTPReceiveListener {
 
     private var edtOtp_password: EditText? = null
     private var btnOtp: Button? = null

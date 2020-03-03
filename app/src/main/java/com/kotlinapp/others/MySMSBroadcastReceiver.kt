@@ -1,4 +1,4 @@
-package com.kotlinapp
+package com.kotlinapp.others
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -10,9 +10,9 @@ import com.google.android.gms.common.api.Status
 
 class MySMSBroadcastReceiver : BroadcastReceiver() {
   
-    private var otpReceiver: OTPReceiveListener? = null  
+    private var otpReceiver: OTPReceiveListener? = null
   
-    fun initOTPListener(receiver: OTPReceiveListener) {  
+    fun initOTPListener(receiver: OTPReceiveListener) {
         this.otpReceiver = receiver  
     }  
   

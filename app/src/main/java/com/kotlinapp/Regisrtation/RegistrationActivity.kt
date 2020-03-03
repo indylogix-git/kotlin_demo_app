@@ -13,7 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.kotlinapp.Login.LoginActivity
-import com.kotlinapp.OtpActivity
+import com.kotlinapp.otp.OtpActivity
 import com.kotlinapp.R
 import com.kotlinapp.Utills.utills
 import com.kotlinapp.retofit.ApiUtils

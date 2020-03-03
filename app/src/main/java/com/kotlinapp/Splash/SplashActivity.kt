@@ -17,7 +17,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.kotlinapp.Login.LoginActivity
-import com.kotlinapp.MainActivity
+import com.kotlinapp.main.MainActivity
 import com.kotlinapp.R
 import com.kotlinapp.Utills.utills
 

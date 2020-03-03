@@ -1,4 +1,4 @@
-package com.kotlinapp
+package com.kotlinapp.TextDemo
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -13,8 +13,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.kotlinapp.R
+import com.kotlinapp.others.User
 import com.kotlinapp.Utills.utills.isConnected
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_text.*
 import java.util.*
 
@@ -99,7 +100,8 @@ class TextSpeachActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             //now adding the adapter to recyclerview
             recyclerView.adapter = adapter
         } else {
-            Toast.makeText(getApplicationContext(), R.string.error_connection, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),
+                R.string.error_connection, Toast.LENGTH_SHORT).show();
         }
 
     }

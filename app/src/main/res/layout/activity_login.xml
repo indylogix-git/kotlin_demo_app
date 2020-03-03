@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@color/bgcolor"
+    android:background="@color/colorPrimaryDark"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/text_labelmed"
+        android:background="@drawable/call_round"
         android:orientation="vertical"
         android:padding="@dimen/text_labelmed" >
 
@@ -66,7 +67,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/call_round"
+            android:background="@drawable/button_round"
             android:layout_marginTop="@dimen/text_labelmed"
             android:gravity="center"
             android:textColor="@color/white"

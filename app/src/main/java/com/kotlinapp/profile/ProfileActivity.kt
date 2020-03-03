@@ -1,23 +1,20 @@
-package com.kotlinapp
+package com.kotlinapp.profile
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.opengl.Visibility
 import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
-import com.kotlinapp.Login.LoginActivity
-import com.kotlinapp.OtpActivity
 import com.kotlinapp.R
 import com.kotlinapp.Utills.utills
+import com.kotlinapp.main.MainActivity
 import com.kotlinapp.retofit.ApiUtils
 import com.kotlinapp.retofit.UserService
-import java.util.concurrent.ThreadLocalRandom
 
 
 class ProfileActivity : Activity() {

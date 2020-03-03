@@ -11,7 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.kotlinapp.Forgot.ForgotActivity
-import com.kotlinapp.MainActivity
+import com.kotlinapp.main.MainActivity
 import com.kotlinapp.R
 import com.kotlinapp.Regisrtation.RegistrationActivity
 import com.kotlinapp.Utills.utills

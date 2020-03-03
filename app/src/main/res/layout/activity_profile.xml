@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/text_labelmed"
-                android:background="@drawable/call_round"
+                android:background="@drawable/button_round"
                 android:gravity="center"
                 android:text="Update"
                 android:textColor="@color/white" />
