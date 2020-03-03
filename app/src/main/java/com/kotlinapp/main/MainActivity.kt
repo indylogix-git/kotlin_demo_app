@@ -66,6 +66,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val sevenFragment = SevenFragment()
     private val eightFragment = EightFragment()
 
+    val lable = listOf("First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eight")
+
     @SuppressLint("WrongConstant", "ResourceAsColor")
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -91,14 +93,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fragmentTransaction.replace(R.id.nav_host_fragment, firstFragment)
         fragmentTransaction.commit()*/
 
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("First"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("Second"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("Third"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("Fourth"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("Fifth"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("Sixth"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("Seventh"))
-        tabLayout!!.addTab(tabLayout!!.newTab().setText("Eight"))
+        for(i in lable.indices){
+            tabLayout!!.addTab(tabLayout!!.newTab().setText(lable[i]))
+        }
 
         val adapter = TabPagerAdapter(
             supportFragmentManager,
