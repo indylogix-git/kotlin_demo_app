@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
@@ -11,17 +10,19 @@
         android:layout_height="match_parent"
         android:scrollbars="none" >
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_labelmed"
         android:background="@drawable/call_round"
-        android:layout_gravity="center" >
+        android:layout_gravity="center" >-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_labelmed"
+            android:layout_gravity="center"
+            android:background="@drawable/call_round"
             android:orientation="vertical"
             android:padding="@dimen/text_labelmed">
 
@@ -230,7 +231,7 @@
 
         </LinearLayout>
 
-    </RelativeLayout>
+    <!--</RelativeLayout>-->
 
     </ScrollView>
 

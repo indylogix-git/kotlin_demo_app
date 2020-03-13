@@ -172,8 +172,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     fragmentTransaction.commit()
                     title = lable[tab.position]
                 }
-
-//              loadFragment(new ChooseWorkFragment());
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
